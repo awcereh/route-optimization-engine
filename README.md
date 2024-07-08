@@ -1,104 +1,208 @@
-# Route Optimization Engine
-
-Repositori ini menyelesaikan Vehicle Routing Problem menggunakan Openstreetmap dan library OR-Tools. VRP adalah masalah optimisasi klasik di mana sekelompok kendaraan diberi tugas untuk mengunjungi sejumlah lokasi untuk meminimalkan total jarak dan waktu yang ditempuh. Data yang digunakan adalah data alfamart dan indomaret se-Jakarta Selatan yang kemudian saya grouping hanya memuat 2 koordinat per kecamatan.
+<a name="readme-top"></a>
 
 
-VRP adalah masalah optimasi klasik di mana sejumlah kendaraan bertugas untuk mengunjungi beberapa lokasi untuk meminimalkan total jarak yang dilalui.
 
-- [Vehicle Routing Problem Solver with OpenStreetMap and OR-Tools](#route-optimization-engine)
-  - [Approach of One-Step Optimization](#approach)
-  - [Requirements](#requirements)
-  - [Installation](#installation)
-  - [Notebook demo](#notebook-demo)
-    - [Features](#features)
-    - [Example Data](#example-data)
-    - [Notebook structure](#notebook-structure)
-  - [Output](#output)
-    - [Optimal Route for 20 Coordinates](#optimal-route-for-20-coordinates)
-  - [Future Improvements and Extensions](#future-improvements-and-extensions)
-  - [Resources and References](#resources-and-references)
+<!-- PROJECT SHIELDS -->
+<!--
+*** I'm using markdown "reference style" links for readability.
+*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
+*** See the bottom of this document for the declaration of the reference variables
+*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
+*** https://www.markdownguide.org/basic-syntax/#reference-style-links
+-->
+[![LinkedIn][linkedin-shield]][linkedin-url]
 
 
-## Approach
 
-Vehicle Routing Problem (VRP) adalah salah satu bentuk permasalahan transportasi yang melibatkan pendistribusian barang maupun orang kepada pelanggan dengan menggunakan kendaraan dan bertujuan untuk meminimasi beberapa tujuan distribusi.
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/awcereh/Ozon-Detection">
+    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  </a>
 
-**Optimasi Pada 20 Koordinat:**
-    - Pertama-tama, mengimpor library yang digunakan
-    - Load input data
-    - Pengelompokkan place_id, latitude dan longitude
-    - Menginisasi center location dan kendaraan yang digunakan (Menggunakan 4 kendaraan)
-    - Menginisiasi distance matrix dari library Openstreetmap (ox) dan nodes (titik pemberhentian) tiap kendaraan
-    - Melakukan optimasi dan mendapatkan rute dari kendaraan 1 sampai kendaraan 4
-    - Plot rute Openstreetmap yang menampilkan maps
+  <h3 align="center">Ozon Level Detection</h3>
 
-## Requirements
-* Python Notebook
-* Conda
-* Git (optional)
-
-## Installation
-Clone repository:
-```bash
-git clone <repository_url>
-cd <repository_directory>
-```
-Membuat dan aktivasi Conda environment menggunakan file env.yaml:
-```bash
-conda env create -f env.yaml
-conda activate travelling-salesman-routing
-```
-
-## Notebook demo
-
-Repository ini menyediakan sebuah Jupyter notebook untuk demonstrasi step-by-step tentang bagaimana menyelesaikan VRP menggunakan OpenStreetMap dan library OR-Tools.
-### Features
-
-- **API_OSMR**: Modul Python untuk memanggil API OpenStreetMap dan mengambil matriks jarak antara lokasi-lokasi.
-- **Routing**: Modul Python untuk mengoptimalkan rute menggunakan library OR-Tools dan memplot solusinya pada peta Folium.
-
-### Example Data
-Sampel input data (```data\input\Data_Alfamart Indomaret_South Jakarta.csv```) terdapat latitude dan longitude dari koordinat alfamart dan indomaret di Jakarta Selatan. Data tersebut dibaca dari file CSV dan digunakan untuk menghitung rute optimal.
-
-### Notebook structure
-Notebook ini terbagi menjadi beberapa tahap:
-The notebook is divided into the following sections:
-
-1. **Introduction to the Vehicle Routing Problem:**
-    - Gambaran umum tentang VRP dan pentingnya dalam optimisasi dan logistik.
-    - Penjelasan tentang pendekatan optimisasi dua langkah untuk perjalanan antar kota dan kunjungan titik penjualan di dalam kota.
-
-2. **Data Loading and Preprocessing:**
-    - Membaca dataset (`data\input\Data_Alfamart Indomaret_South Jakarta.csv`) yang berisi nilai latitude dan longitude dari titik penjualan di berbagai kota.
-    - Mengelompokkan data untuk menghitung jarak dan memilih 20 titik koordinat tempat untuk tiap kecamatan.
-
-3. **Visualization of Optimal Routes:**
-    - Memplot rute optimal untuk mengunjungi semua outlet pada maps Folium.
-    - Memplot rute optimal untuk mengunjungi titik penjualan outlet yang dipilih di setiap outlet pada maps Folium.
-
-### Optimal Route for 20 Coordinates
-Gambar peta di bawah ini memperlihatkan rute optimal untuk mengunjungi semua outlet Alfamart dan Indomaret. Ini menggambarkan urutan kota yang akan dikunjungi, dimulai dari kota awal yang dipilih dan melintasi semua kota lainnya, kembali ke titik awal, serta pada keempat kendaraan. Setiap kota direpresentasikan oleh penanda, dan garis penghubung menunjukkan jalur yang dioptimalkan antara kota-kota tersebut.
-
-![Optimal Route](maps/plotting.jpg)
-![Capacitated](maps/capacitated.jpg)
+  <p align="center">
+    A final project for the Computational Physics Capita Selecta course.
+    <br />
+    <a href="https://github.com/awcereh/Ozon-Detection">View Demo</a>
+    ·
+    <a href="https://www.datascienceportfol.io/rosyids_">Report Bug</a>
+  </p>
+</div>
 
 
-## Future Improvements and Extensions
-Ada beberapa area di mana project dapat ditingkatkan untuk memenuhi kondisi real yang lebih kompleks. Beberapa progress ke depannya yaitu:
 
-- **Fungsi def untuk code lebih sederhana**: Membuat dan merapikan api_osmr.py dan routing.py untuk code notebook (main.ipynb) lebih sederhana.
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</details>
 
-- **Time Windows for Visiting**: Memasukkan batasan waktu untuk mengunjungi titik penjualan, di mana setiap lokasi memiliki waktu buka dan tutup tertentu. Hal ini akan memastikan bahwa rute mengikuti jam operasional bisnis.
 
-- **Interactive User Interface**: Memungkinkan pengguna untuk memasukkan dataset mereka sendiri, memvisualisasikan rute yang dioptimalkan, dan mengekspor hasilnya.
 
-## Resources and References
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-- [Traveling Salesman Problem - Wikipedia](https://en.wikipedia.org/wiki/Travelling_salesman_problem).
+[![Product Name Screen Shot][product-screenshot]]
 
-- [Open Source Routing Machine (OSRM) API](https://project-osrm.org/).
+Analyzing the Ozone Level detection dataset using Fast Fourier Transform, performing visualization and data reduction (PCA), and creating prediction models
 
-- [Google OR-Tools](https://developers.google.com/optimization/routing/tsp?hl=es-419).
+All the attribute start with T means the temperature measured at different time throughout the day; and those starts with WS indicate the wind speed at various time. This dataset contains:
+   1. **Date:** Data collection time
+   2. **WSR 0-23:** Hourly wind speed data acquisition 
+   3. **WSR_PK:** Peak wind speed in a day
+   4. **WSR_AV:** Average wind speed in a day
+   5. **T 0-23:** Hourly temperature data acquisition
+   6. **T_PK:** Peak temperature in a day
+   7. **T_AV:** Average temperature in a day
+   8. **T85, T70, T50:** T at 850, 700, and 500 hpa level (1500m heigh, 3100m height, and 5500 m height)
+   9. **RH85, RH70, RH50:** Relative Humidity at 850, 700, and 500 hpa level (1500m heigh, 3100m height, and 5500 m height)
+   10. **U85, U70, U50:** U Wind (east-west direction wind) at 850, 700, and 500 hpa level (1500m heigh, 3100m height, and 5500 m height)
+   11. **V85, V70, V50:** V Wind (north-south direction wind) at 850, 700, and 500 hpa level (1500m heigh, 3100m height, and 5500 m height)
+   12. **RH85, RH70, RH50:** Geopotential at 850, 700, and 500 hpa level (1500m heigh, 3100m height, and 5500 m height)
+   13. **KI:** K-Index (quantifies disturbances in the horizontal component of earth's magnetic field)
+   14. **TT:** T-Totals (the Vertical Totals Index (temperature at 850 mb minus temperature at 500 mb) and the Cross Totals Index (dew point at 850 mb minus temperature at 500 mb).)
+   15. **SLP:** Sea level pressure
+   16. **SLP_** SLP change from previous day
+   17. **Precp** Precipitation
+   18. **Target** 1 indicates ozon day and 0 indicates normal day
 
-- [Folium Package](https://python-visualization.github.io/folium/).
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+### Built With
+
+
+This project was completed using Python, with the libraries NumPy and scikit-learn for data analysis, as well as Matplotlib, Plotly, and Seaborn for data visualization.
+
+* [![Python][Python.org]][Python-url]
+* [![Excel][Excel.com]][Excel-url]
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- GETTING STARTED -->
+## Getting Started
+
+### Installation
+
+_If you want to run the code for learning purposes or to change the parameters, please follow the steps below:_
+
+1. Download Zip, or
+2. Clone the repo
+   ```sh
+   git clone https://github.com/awcereh/Ozon-Detection.git
+   ```
+3. Run in your code editor (VS Code, Colab, or Jupyter).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- USAGE EXAMPLES -->
+## Usage
+
+The purpose of the project Analyzing the Ozone Level detection dataset using Fast Fourier Transform, performing visualization and data reduction (PCA), and creating prediction models
+
+### Fast Fourier Transform
+[![FFT][FFT-url]
+The Fourier coefficients were obtained from the FFT computation of daily wind speed measurements from 1998 to 2004.
+
+The first Matplotlib graph shows the Fourier coefficient graph for each WSR wind speed along with the largest Fourier coefficient value.
+The second graph shows the Fourier coefficient graph for the highest peak wind speed (𝑊𝑆𝑅𝑃𝐾):
+(WSR PK) measured each day from 1998 to 2004, with a maximum Fourier coefficient of 
+MAX 𝑋𝐾
+WSRPK =10566.420707964606
+MAX XK WSRPK =10566.420707964606.
+The third graph shows the Fourier coefficient graph for the average wind speed (𝑊𝑆𝑅𝐴𝑉)
+(WSR AV) measured each day from 1998 to 2004, with a maximum Fourier coefficient of 
+MAX 𝑋𝐾 WSRAV = 5862.8862831858405
+MAX XK WSRAV =5862.8862831858405.
+
+### Principal Component Analysis
+[![PCA][PCA-url]
+According to the reference, the cumulative variance in PCA provides an indication of how much the features (columns) summarize variation in the data. A higher cumulative variance indicates that more data is explained by those features.
+
+Between the two features, WSR and Temperature, the feature that better reduces the data from many dimensions is identified. For the feature DSW, data is reduced from 26 dimensions to 2 dimensions with a variance of 71.73%, while for the Temperature feature, data is reduced from 27 dimensions to 2 dimensions with a variance of 96.43%.
+
+### Modelling Data
+[![Modelling][Modelling-url]
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- ROADMAP -->
+## Roadmap
+
+- [x] FFT
+- [x] Principal Component Analysis (PCA)
+- [x] modelling Data
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- CONTRIBUTING -->
+## Contributing
+
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+Don't forget to give the project a star! Thanks again!
+
+1. Fork the Project
+2. Create your Feature Branch
+3. Commit your Changes
+4. Push to the Branch
+5. Open a Pull Request
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+<!-- CONTACT -->
+## Contact
+
+Muhammad Rosyid Suseno - [@rosyids_](https://instagram.com/rosyids_) - muhammadrosyid1229@gmail.com
+
+Project Link: [https://github.com/awcereh/Ozon-Detection](https://github.com/awcereh/Ozon-Detection)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://www.linkedin.com/in/mrosyids/
+[product-screenshot]: images/screenshot.png
+[Python.org]: https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white
+[Python-url]: https://www.python.org
+[Excel.com]: https://img.shields.io/badge/Microsoft_Excel-217346?style=for-the-badge&logo=microsoft-excel&logoColor=white
+[Excel-url]: https://www.microsoft.com/id-id/microsoft-365/excel
+
+[FFT-url]: images/fft.png
+[PCA-url]: images/pca.png
+[Modelling-url]: images/modelling.jpg
 
