@@ -21,7 +21,7 @@
     <img src="images/logo.jpg" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Ozon Level Detection</h3>
+  <h3 align="center">Route Optimization Engine</h3>
 
   <p align="center">
     A final project for the Computational Physics Capita Selecta course.
@@ -117,13 +117,15 @@ _If you want to run the code for learning purposes or to change the parameters, 
 ## Usage
 
 ### Vehicle Routing Problem (VRP)
-[![VRP][VRP-url] [![VRP1][VRP1-url]
+[![VRP][VRP-url]
+[![VRP1][VRP1-url] <br />
 The Vehicle Routing Problem (VRP) is a type of transportation problem that involves distributing goods or people to customers using vehicles, with the goal of minimizing several distribution objectives.
 
 Based on the results, it can be seen that all vehicles successfully completed their routes.
 
 ### Capacitated Vehicle Routing Problem (CVRP)
-[![CVRP][CVRP-url] [![CVRP1][CVRP1-url]
+[![CVRP][CVRP-url]
+[![CVRP1][CVRP1-url] <br />
 The CVRP algorithm is the same as the VRP, except that during the chromosome selection process, vehicle capacity constraints are added. If a vehicle reaches its specified capacity, it will stop visiting points that could increase the load. Therefore, due to limitations in the data, I used dummy data to fill in the vehicle capacity gaps in the model. Based on the results, it can be seen that all vehicles successfully completed their routes and vehicle capacities.
 
 ### Capacitated Vehicle Routing Problem with Time Windows (CVRPTW) -- on process
@@ -139,7 +141,7 @@ The CVRP algorithm is the same as the VRP, except that during the chromosome sel
 
 - [x] VRP
 - [x] CVRP
-- [x] CVRPTW
+- [] CVRPTW
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -188,5 +190,5 @@ Project Link: [https://github.com/awcereh/Ozon-Detection](https://github.com/awc
 [VRP1-url]: images/vrp1.png
 [CVRP-url]: images/cvrp.png
 [CVRP1-url]: images/cvrp1.png
-[CVRPTW-url]: images/cvrptw.jpg
+[CVRPTW-url]: images/cvrptw.png
 
