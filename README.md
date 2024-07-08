@@ -116,31 +116,18 @@ _If you want to run the code for learning purposes or to change the parameters, 
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-The purpose of the project Analyzing the Ozone Level detection dataset using Fast Fourier Transform, performing visualization and data reduction (PCA), and creating prediction models
+### Vehicle Routing Problem (VRP)
+[![VRP][VRP-url] [![VRP1][VRP1-url]
+The Vehicle Routing Problem (VRP) is a type of transportation problem that involves distributing goods or people to customers using vehicles, with the goal of minimizing several distribution objectives.
 
-### Fast Fourier Transform
-[![FFT][FFT-url]
-The Fourier coefficients were obtained from the FFT computation of daily wind speed measurements from 1998 to 2004.
+Based on the results, it can be seen that all vehicles successfully completed their routes.
 
-The first Matplotlib graph shows the Fourier coefficient graph for each WSR wind speed along with the largest Fourier coefficient value.
-The second graph shows the Fourier coefficient graph for the highest peak wind speed (𝑊𝑆𝑅𝑃𝐾):
-(WSR PK) measured each day from 1998 to 2004, with a maximum Fourier coefficient of 
-MAX 𝑋𝐾
-WSRPK =10566.420707964606
-MAX XK WSRPK =10566.420707964606.
-The third graph shows the Fourier coefficient graph for the average wind speed (𝑊𝑆𝑅𝐴𝑉)
-(WSR AV) measured each day from 1998 to 2004, with a maximum Fourier coefficient of 
-MAX 𝑋𝐾 WSRAV = 5862.8862831858405
-MAX XK WSRAV =5862.8862831858405.
+### Capacitated Vehicle Routing Problem (CVRP)
+[![CVRP][CVRP-url] [![CVRP1][CVRP1-url]
+The CVRP algorithm is the same as the VRP, except that during the chromosome selection process, vehicle capacity constraints are added. If a vehicle reaches its specified capacity, it will stop visiting points that could increase the load. Therefore, due to limitations in the data, I used dummy data to fill in the vehicle capacity gaps in the model. Based on the results, it can be seen that all vehicles successfully completed their routes and vehicle capacities.
 
-### Principal Component Analysis
-[![PCA][PCA-url]
-According to the reference, the cumulative variance in PCA provides an indication of how much the features (columns) summarize variation in the data. A higher cumulative variance indicates that more data is explained by those features.
-
-Between the two features, WSR and Temperature, the feature that better reduces the data from many dimensions is identified. For the feature DSW, data is reduced from 26 dimensions to 2 dimensions with a variance of 71.73%, while for the Temperature feature, data is reduced from 27 dimensions to 2 dimensions with a variance of 96.43%.
-
-### Modelling Data
-[![Modelling][Modelling-url]
+### Capacitated Vehicle Routing Problem with Time Windows (CVRPTW) -- on process
+[![CVRPTW][CVRPTW-url]
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -150,9 +137,9 @@ Between the two features, WSR and Temperature, the feature that better reduces t
 <!-- ROADMAP -->
 ## Roadmap
 
-- [x] FFT
-- [x] Principal Component Analysis (PCA)
-- [x] modelling Data
+- [x] VRP
+- [x] CVRP
+- [x] CVRPTW
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -178,7 +165,7 @@ Don't forget to give the project a star! Thanks again!
 
 Muhammad Rosyid Suseno - [@rosyids_](https://instagram.com/rosyids_) - muhammadrosyid1229@gmail.com
 
-Project Link: [https://github.com/awcereh/Ozon-Detection](https://github.com/awcereh/Ozon-Detection)
+Project Link: [https://github.com/awcereh/Ozon-Detection](https://github.com/awcereh/route-optimization-engine)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -191,13 +178,15 @@ Project Link: [https://github.com/awcereh/Ozon-Detection](https://github.com/awc
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/mrosyids/
-[product-screenshot]: images/screenshot.png
+[product-screenshot]: images/The-Capacitated-Vehicle-Routing-Problem-CVRP.png
 [Python.org]: https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white
 [Python-url]: https://www.python.org
 [Excel.com]: https://img.shields.io/badge/Microsoft_Excel-217346?style=for-the-badge&logo=microsoft-excel&logoColor=white
 [Excel-url]: https://www.microsoft.com/id-id/microsoft-365/excel
 
-[FFT-url]: images/fft.png
-[PCA-url]: images/pca.png
-[Modelling-url]: images/modelling.jpg
+[VRP-url]: images/vrp.png
+[VRP1-url]: images/vrp1.png
+[CVRP-url]: images/cvrp.png
+[CVRP1-url]: images/cvrp1.png
+[CVRPTW-url]: images/cvrptw.jpg
 
