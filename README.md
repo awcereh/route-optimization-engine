@@ -17,8 +17,8 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/awcereh/Ozon-Detection">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  <a href="https://github.com/awcereh/route-optimization-engine">
+    <img src="images/logo.jpg" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Ozon Level Detection</h3>
