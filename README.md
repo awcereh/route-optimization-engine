@@ -64,27 +64,22 @@
 
 [![Product Name Screen Shot][product-screenshot]]
 
+This repository solves the Vehicle Routing Problem using OpenStreetMap and the Google OR-Tools library. The VRP is a classic optimization problem where a fleet of vehicles is tasked with visiting several locations to minimize the total distance and time traveled. The data used includes data from Alfamart and Indomaret stores across South Jakarta, which I grouped to contain only 2 coordinates per subdistrict.
+
+The VRP is a classic optimization problem where a number of vehicles are tasked with visiting several locations to minimize travel costs.
 Analyzing the Ozone Level detection dataset using Fast Fourier Transform, performing visualization and data reduction (PCA), and creating prediction models
 
-All the attribute start with T means the temperature measured at different time throughout the day; and those starts with WS indicate the wind speed at various time. This dataset contains:
-   1. **Date:** Data collection time
-   2. **WSR 0-23:** Hourly wind speed data acquisition 
-   3. **WSR_PK:** Peak wind speed in a day
-   4. **WSR_AV:** Average wind speed in a day
-   5. **T 0-23:** Hourly temperature data acquisition
-   6. **T_PK:** Peak temperature in a day
-   7. **T_AV:** Average temperature in a day
-   8. **T85, T70, T50:** T at 850, 700, and 500 hpa level (1500m heigh, 3100m height, and 5500 m height)
-   9. **RH85, RH70, RH50:** Relative Humidity at 850, 700, and 500 hpa level (1500m heigh, 3100m height, and 5500 m height)
-   10. **U85, U70, U50:** U Wind (east-west direction wind) at 850, 700, and 500 hpa level (1500m heigh, 3100m height, and 5500 m height)
-   11. **V85, V70, V50:** V Wind (north-south direction wind) at 850, 700, and 500 hpa level (1500m heigh, 3100m height, and 5500 m height)
-   12. **RH85, RH70, RH50:** Geopotential at 850, 700, and 500 hpa level (1500m heigh, 3100m height, and 5500 m height)
-   13. **KI:** K-Index (quantifies disturbances in the horizontal component of earth's magnetic field)
-   14. **TT:** T-Totals (the Vertical Totals Index (temperature at 850 mb minus temperature at 500 mb) and the Cross Totals Index (dew point at 850 mb minus temperature at 500 mb).)
-   15. **SLP:** Sea level pressure
-   16. **SLP_** SLP change from previous day
-   17. **Precp** Precipitation
-   18. **Target** 1 indicates ozon day and 0 indicates normal day
+This dataset contains:
+   1. **nama_tempat:** contains the name of the place, either Alfamart or Indomaret
+   2. **rating_tempat:** the rating of the place based on Google Maps
+   3. **user_ratings_total:** the total number of users who rated the place
+   4. **latitude & longitude:** the coordinates of the Alfamart or Indomaret location
+   5. **alamat_tempat:** the address of the place
+   6. **place_ID:** the ID of each store
+   7. **store:** distinguishes whether the place is an Alfamart or Indomaret
+   8. **nama_kelurahan:** the name of the subdistrict where the store is located
+   9. **nama_kecamatan:** the name of the district where the store is located
+   10. **nama_kota** the name of the city where the store is located
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -93,7 +88,7 @@ All the attribute start with T means the temperature measured at different time 
 ### Built With
 
 
-This project was completed using Python, with the libraries NumPy and scikit-learn for data analysis, as well as Matplotlib, Plotly, and Seaborn for data visualization.
+This project was completed using Excel and Python: with the libraries OpenStreetMap, Google OR-Tools, geopy, pandas, as well as Matplotlib and Folium for data visualization.
 
 * [![Python][Python.org]][Python-url]
 * [![Excel][Excel.com]][Excel-url]
@@ -110,9 +105,9 @@ _If you want to run the code for learning purposes or to change the parameters, 
 1. Download Zip, or
 2. Clone the repo
    ```sh
-   git clone https://github.com/awcereh/Ozon-Detection.git
+   git clone https://github.com/awcereh/route-optimization-engine.git
    ```
-3. Run in your code editor (VS Code, Colab, or Jupyter).
+3. Run in your code editor (Recommended: VS Code).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
