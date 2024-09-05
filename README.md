@@ -24,7 +24,7 @@
   <h3 align="center">Route Optimization Engine</h3>
 
   <p align="center">
-    A final project for the Computational Physics Capita Selecta course.
+    An Intern final project at PT Xquisite Analitika Indonesia.
     <br />
     <a href="https://github.com/awcereh/Ozon-Detection">View Demo</a>
     ·
